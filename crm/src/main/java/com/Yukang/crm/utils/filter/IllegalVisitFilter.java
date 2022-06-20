@@ -19,8 +19,9 @@ public class IllegalVisitFilter implements Filter {
 
         }else{
             User user = (User) request.getSession().getAttribute("user");
-        
+
             if (user != null) {
+                System.out.println(1111);
                 filterChain.doFilter(servletRequest,servletResponse);
             }else {
                 response.sendRedirect(request.getContextPath()+"/login.jsp");
@@ -34,4 +35,6 @@ public class IllegalVisitFilter implements Filter {
          */
 
     }
+
+
 }

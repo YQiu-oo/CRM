@@ -8,15 +8,17 @@ import com.Yukang.crm.utils.DateTimeUtil;
 import com.Yukang.crm.utils.SqlSessionUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
-    private  UserDao userDao = SqlSessionUtil.getSqlSession().getMapper(UserDao.class);
+
 
 
     @Override
     public User login(String loginAct, String password, String ip) throws LoginException{
         Map<String, String> map = new HashMap<>();
+        UserDao userDao = SqlSessionUtil.getSqlSession().getMapper(UserDao.class);
         map.put("loginAct",loginAct);
         map.put("loginPwd",password);
         User user = userDao.login(map);
@@ -34,5 +36,12 @@ public class UserServiceImpl implements UserService {
         }
         return user;
 
+    }
+
+    @Override
+    public List<User> getUserList() {
+        UserDao userDao = SqlSessionUtil.getSqlSession().getMapper(UserDao.class);
+
+        return userDao.getUserList();
     }
 }

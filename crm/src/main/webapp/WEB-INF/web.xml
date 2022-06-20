@@ -4,6 +4,16 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  <!--
+      add/create:跳转到添加页
+      save: 执行添加操作
+      edit:修改模态窗口
+      update:执行修改操作
+      get:执行查询操作
+      特殊操作
+      -->
+
+
   <filter>
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.Yukang.crm.utils.filter.EncodingFilter</filter-class>
@@ -21,7 +31,7 @@
 
 </filter-mapping>
 
-
+<!--UserController-->
   <servlet>
     <servlet-name>UserController</servlet-name>
     <servlet-class>com.Yukang.crm.settings.webController.UserController</servlet-class>
@@ -30,4 +40,26 @@
     <servlet-name>UserController</servlet-name>
     <url-pattern>/settings/user/login.do</url-pattern>
   </servlet-mapping>
+<!--  ActivityController-->
+  <servlet>
+        <servlet-name>ActivityController</servlet-name>
+    <servlet-class>com.Yukang.crm.workbench.controller.ActivityController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/getUserList.do</url-pattern>
+    <url-pattern>/workbench/activity/save.do</url-pattern>
+    <url-pattern>/workbench/activity/pageList.do</url-pattern>
+    <url-pattern>/workbench/activity/delete.do</url-pattern>
+    <url-pattern>/workbench/activity/getUserListAndAActivity.do</url-pattern>
+    <url-pattern>/workbench/activity/update.do</url-pattern>
+    <url-pattern>/workbench/activity/detail.do</url-pattern>
+    <url-pattern>/workbench/activity/getRemarkListById.do</url-pattern>
+    <url-pattern>/workbench/activity/deleteRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/addRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/editRemark.do</url-pattern>
+
+  </servlet-mapping>
+
+
 </web-app>

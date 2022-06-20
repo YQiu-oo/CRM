@@ -3,11 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="jdbc.properties"></properties>
-    <settings>
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
-    </settings>
+
     <typeAliases >
        <package name="com.Yukang.crm.settings.domain"/>
+        <package name="com.Yukang.crm.workbench.domain"/>
     </typeAliases>
 
     <environments default="development">
@@ -28,6 +27,8 @@
     </environments>
     <mappers>
     <package name="com.Yukang.crm.settings.dao"/>
+        <package name="com.Yukang.crm.workbench.dao"/>
+
     </mappers>
 
 
